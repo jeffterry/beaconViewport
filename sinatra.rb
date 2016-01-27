@@ -3,8 +3,16 @@ require "faye"
 require "json"
 
 # Set Sinatra configuration settings - available via "settings" variable
-set :port, 3000
-set :faye_client, Faye::Client.new( 'http://localhost:9292/faye' )
+if ENV["RACK_ENV"] = "production"
+  set :faye_client, Faye::Client.new( 'http://107.170.204.77/faye' )
+else
+  set :port, 3000
+  set :faye_client, Faye::Client.new( 'http://localhost:9292/faye' )
+end
+
+get '/' do
+  redirect to '/beaconViewport.html'
+end
 
 get '/pixel.png' do
 

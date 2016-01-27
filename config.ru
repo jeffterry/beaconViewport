@@ -2,8 +2,11 @@
 # encoding: utf-8
 # Not going to use config.ru for development any more - this file is just to support production
 
+ENV["RACK_ENV"] = "production"
+
+
 require_relative "sinatra.rb"
-run Sinatra.application
+run Sinatra::Application
 
 
 
