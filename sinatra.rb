@@ -3,15 +3,18 @@ require "faye"
 require "json"
 
 # Set Sinatra configuration settings - available via "settings" variable
-#if ENV["RACK_ENV"] = "production"
-  set :faye_client, Faye::Client.new( 'http://107.170.204.77:9292/faye' )
-#else
-#  set :port, 3000
-#  set :faye_client, Faye::Client.new( 'http://localhost:9292/faye' )
-#end
+if production?
+  require "public_ip"
+  public_ip = PublicIp.get_ip
+  set :faye_url, "http://#{public_ip}:9292/faye"
+else
+  set :faye_url, "http://localhost:9292/faye"
+end
+set :faye_client, Faye::Client.new( settings.faye_url )
 
 get '/' do
-  redirect to '/beaconViewport.html'
+  @faye_url = settings.faye_url
+  erb :index
 end
 
 get '/pixel.png' do
@@ -27,7 +30,7 @@ get '/pixel.png' do
   settings.faye_client.publish( "/beacons", a.to_json )
 
   # Return web beacon file
-  send_file "/var/www/beaconViewport/assets/pixel.png"
+  send_file "assets/pixel.png"
 
 end
 
@@ -44,7 +47,7 @@ get '/iframe.html' do
   settings.faye_client.publish( "/beacons", a.to_json )
 
   # Return web beacon file
-  send_file "/var/www/beaconViewport/assets/iframe.html"
+  send_file "assets/iframe.html"
 
 end
 

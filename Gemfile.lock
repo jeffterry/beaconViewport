@@ -26,12 +26,10 @@ GEM
       websocket-driver (>= 0.5.1)
     god (0.13.7)
     http_parser.rb (0.6.0)
-    kgio (2.10.0)
     multi_json (1.11.2)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
-    raindrops (0.15.0)
     sinatra (1.4.7)
       rack (~> 1.5)
       rack-protection (~> 1.4)
@@ -41,10 +39,6 @@ GEM
       eventmachine (~> 1.0, >= 1.0.4)
       rack (~> 1.0)
     tilt (2.0.2)
-    unicorn (5.0.1)
-      kgio (~> 2.6)
-      rack
-      raindrops (~> 0.7)
     websocket-driver (0.6.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -57,7 +51,6 @@ DEPENDENCIES
   god
   sinatra
   thin
-  unicorn
 
 BUNDLED WITH
    1.11.2

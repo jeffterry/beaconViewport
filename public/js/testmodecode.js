@@ -26,7 +26,7 @@ jQuery("div.testingTooltip").tooltipster({
   content: jQuery(testMessage)
 }).tooltipster("show");
 
-var beaconHost = "http://107.170.204.77/";
+var beaconHost = "/";
 
 function t1(){
 	var cb = (+new Date());
