@@ -6,7 +6,7 @@
 <link href="./css/tooltipster.css" rel="stylesheet" type="text/css" />
 <link href="./css/tooltipster_themes/tooltipster-punk.css" rel="stylesheet" type="text/css" />
 <script src="http://code.jquery.com/jquery-1.12.0.min.js" type="text/javascript"></script>
-<script src="http://localhost:9292/faye/client.js" type="text/javascript"></script>
+<script src="http://107.170.204.77:9292/faye/client.js" type="text/javascript"></script>
 <script src="./js/jquery.tooltipster.min.js" type="text/javascript"></script>
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script type="text/javascript">
@@ -20,7 +20,7 @@ var decayTime = 45 * 1000;
 var searchFilter = "";
 
 /* Create websocket connection and subscribe to data updates*/
-var faye_client = new Faye.Client('http://localhost:9292/faye');
+var faye_client = new Faye.Client('http://107.170.204.77:9292/faye');
 faye_client.subscribe('/beacons', function(data) {
   var a = JSON.parse(data);
   a.id = 0;
