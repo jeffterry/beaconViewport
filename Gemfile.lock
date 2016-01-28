@@ -24,6 +24,7 @@ GEM
     faye-websocket (0.10.2)
       eventmachine (>= 0.12.0)
       websocket-driver (>= 0.5.1)
+    god (0.13.7)
     http_parser.rb (0.6.0)
     kgio (2.10.0)
     multi_json (1.11.2)
@@ -53,6 +54,7 @@ PLATFORMS
 
 DEPENDENCIES
   faye
+  god
   sinatra
   thin
   unicorn

@@ -27,7 +27,7 @@ get '/pixel.png' do
   settings.faye_client.publish( "/beacons", a.to_json )
 
   # Return web beacon file
-  send_file "assets/pixel.png"
+  send_file "/var/www/beaconViewport/assets/pixel.png"
 
 end
 
@@ -44,7 +44,7 @@ get '/iframe.html' do
   settings.faye_client.publish( "/beacons", a.to_json )
 
   # Return web beacon file
-  send_file "assets/iframe.html"
+  send_file "/var/www/beaconViewport/assets/iframe.html"
 
 end
 
