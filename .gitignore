@@ -1,4 +1,1 @@
-logs/faye.log
-logs/unicorn.log
-logs/god-faye.log
-logs/god-sinatra.log
+logs/
