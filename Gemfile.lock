@@ -26,7 +26,15 @@ GEM
       websocket-driver (>= 0.5.1)
     god (0.13.7)
     http_parser.rb (0.6.0)
+    methadone (1.9.2)
+      bundler
+    mini_portile2 (2.0.0)
     multi_json (1.11.2)
+    nokogiri (1.6.7.2)
+      mini_portile2 (~> 2.0.0.rc2)
+    public_ip (0.1.1)
+      methadone (~> 1.9.2)
+      nokogiri (~> 1.6.7)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -49,6 +57,7 @@ PLATFORMS
 DEPENDENCIES
   faye
   god
+  public_ip
   sinatra
   thin
 
